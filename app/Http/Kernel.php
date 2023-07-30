@@ -54,6 +54,7 @@ class Kernel extends HttpKernel
         ConvertEmptyStringsToNull::class,
         CookieConsentMiddleware::class,
         RobotsMiddleware::class,
+        \App\Http\Middleware\HttpsProtocol::class
     ];
 
     /**
