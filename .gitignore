@@ -4,6 +4,7 @@
 /.idea
 /vendor
 /.phpintel
+/.npm
 .env
 .DS_Store
 /.docker/
