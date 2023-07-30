@@ -24,7 +24,7 @@ use Modules\Order\Models\Order;
 use Modules\Post\Models\Post;
 use Modules\Post\Models\PostComment;
 use Modules\Product\Models\ProductReview;
-use Modules\User\Database\factories\UserFactory;
+use Modules\User\Database\Factories\UserFactory;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasPermissions;
@@ -92,18 +92,18 @@ class User extends Authenticatable
     use HasPermissions;
     use Notifiable;
     use HasApiTokens;
-    
+
     protected $table = 'users';
-    
+
     protected $dates = [
         'email_verified_at',
     ];
-    
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
-    
+
     protected $fillable = [
         'name',
         'email',
@@ -115,7 +115,7 @@ class User extends Authenticatable
         'status',
         'remember_token',
     ];
-    
+
     /**
      * @return UserFactory
      */
@@ -123,7 +123,7 @@ class User extends Authenticatable
     {
         return UserFactory::new();
     }
-    
+
     /**
      * @return HasMany
      */
@@ -131,7 +131,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cart::class);
     }
-    
+
     /**
      * @return HasMany
      */
@@ -139,7 +139,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
-    
+
     /**
      * @return HasMany
      */
@@ -147,7 +147,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(PostComment::class);
     }
-    
+
     /**
      * @return HasMany
      */
@@ -155,7 +155,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class, 'added_by');
     }
-    
+
     /**
      * @return HasMany
      */
@@ -163,7 +163,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(ProductReview::class);
     }
-    
+
     /**
      * @return HasMany
      */
@@ -171,5 +171,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(Wishlist::class);
     }
-    
+
 }
