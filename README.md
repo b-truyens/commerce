@@ -97,9 +97,9 @@
 
 * **Docker**
 * **In project root run**: docker-compose up -d.
-* **Install laravel packages**: composer install
-* **ENV**: rename DB_HOST=127.0.0.1 to DB_HOST=mysql
-* **Container ssh**: docker-compose exec app sh
+* **fix permissions**: docker exec -it --user=root commerce-app chmod -R 777 /var/www/
+* **Install laravel packages**: composer update && composer install.
+* **Container ssh**: docker-compose exec commerce-app bash
 * **Run migrations**: php artisan:migrate:fresh --seed.
 
 <p style="text-align:center">Thank You so much for your time !!!</p>
