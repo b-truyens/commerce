@@ -8,7 +8,7 @@ use Modules\Message\Models\Message;
 class MessageFactory extends Factory
 {
     protected $model = Message::class;
-    
+
     /**
      * Define the model's default state.
      *
@@ -23,7 +23,7 @@ class MessageFactory extends Factory
             'photo'   => $this->faker->word,
             'phone'   => $this->faker->phoneNumber,
             'message' => $this->faker->word,
-            'read_at' => $this->faker->time,
+            'read_at' => $this->faker->dateTime,
         ];
     }
 }
